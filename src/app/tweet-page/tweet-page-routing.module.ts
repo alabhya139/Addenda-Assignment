@@ -9,7 +9,7 @@ const routes: Routes = [
     component: TweetListComponent
   },
   {
-    path: 'tweet-synopsis',
+    path: 'tweet-details',
     component: TweetSynopsisComponent
   }
 ];

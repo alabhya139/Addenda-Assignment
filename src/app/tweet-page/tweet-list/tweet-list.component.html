@@ -1,1 +1,27 @@
-<p>tweet-list works!</p>
+<h2 class="text-center">Tweets</h2>
+<div *ngFor="let tweet of tweetData; let i = index;" class="tweets-container d-flex justify-content-center m-b-8">
+    <div (click)="syncTweet(i)" class="tweet col-md-6">
+        <div class="tweet-head">
+          <div class="tweet-image">
+            <img src="{{tweet?.user.profile_image_url_https}}" alt="avatar" />
+          </div>
+          <div class="tweet-author">
+            <div class="name">{{tweet?.user.name}}</div>
+            <div class="handle">@{{tweet?.user.screen_name}}</div>
+          </div>
+        </div>
+        <div class="tweet-body">
+          <p id="tweet-text">{{tweet?.text}}</p>
+        </div>
+        <div class="tweet-footer">
+           <div class="icons">
+             <i class="fas fa-reply"></i>
+             <i class="fas fa-retweet"><small>{{tweet?.retweet_count}}</small></i>
+             <i class="fas fa-heart"><small>{{tweet?.favorite_count}}</small></i>
+           </div>
+           <div class="created_at">
+               <p class="handle"><small>{{tweet?.created_at | date}}</small></p>
+           </div>
+        </div>
+      </div>
+  </div>

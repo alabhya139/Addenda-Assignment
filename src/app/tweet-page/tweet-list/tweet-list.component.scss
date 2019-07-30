@@ -1,0 +1,103 @@
+
+.tweets-header {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: -1px;
+}
+
+$accent-colour: #3b94d9;
+$light-colour: #697882;
+$family-1: 'Roboto', sans-serif;
+
+.tweet {
+  border: 1px solid #e1e8ed;
+  border-radius: 5px;
+  position: relative;
+  padding: 20px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color .1s;
+  
+  &:hover {
+    border-color: #ccd6dd;
+  }
+  
+  .tweet-head {
+    display: flex;
+    line-height: 1.2;
+    
+    .tweet-image {
+      display: flex;
+      align-items: center;
+      margin-right: 9px;
+      
+      img {
+        border-radius: 999px;
+        height: 38px;
+        width: 38px;
+      }
+    }
+    
+    .tweet-author {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+      &:hover .name {
+        color: $accent-colour;
+      }
+      
+      .name {
+        font-weight: 800;
+        transition: color .1s;
+      }
+      
+      .handle {
+        color: $light-colour;
+        font-size: .875rem;
+      }
+    }
+  }
+  
+  .tweet-footer {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(94, 94, 94);
+    .icons {
+      .fas {
+        color: $light-colour;
+        margin-right: 1rem;
+        transition: color .1s;
+        
+        .icon-number {
+          font-family: $family-1;
+          font-size: 1rem;
+          font-weight: normal;
+        }
+      }
+      
+      .fa-reply:hover {
+        color: $accent-colour;
+      }
+
+      .fa-retweet:hover {
+        color: #3da50d;
+      }
+
+      .fa-heart:hover {
+        color: #E0245E;
+      }
+    }
+  }
+}
+
+@keyframes refresh {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

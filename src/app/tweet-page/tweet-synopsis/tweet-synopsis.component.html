@@ -1,1 +1,35 @@
-<p>tweet-synopsis works!</p>
+<div class="container col-md-8">
+        <div class="header">
+          <i class="fa fa-long-arrow-left"></i>
+          <img src="{{tweetData?.user.profile_image_url_https}}" alt="" />
+          <i class="fa fa-ellipsis-h" ></i>
+        </div>
+        <div class="about">
+          <h1>{{tweetData?.user.name}}</h1>
+          <span>{{tweetData?.user.screen_name}}</span>
+          <div class="follow">
+            <span class="plus">+</span>
+            <h2>Follow</h2>
+          </div>
+        
+        </div>
+        
+        <ul>
+          <li class="no-padding">
+                <div class="half">
+                        <span>{{tweetData?.user.favourites_count}}</span> favourites
+                      </div>
+            <div class="half">
+              <span>{{tweetData?.user.followers_count}}</span> followers
+            </div>
+            <div class="half">
+              <span>{{tweetData?.user.friends_count}}</span> following
+            </div>
+          </li>
+          <li>
+            <p>
+                {{tweetData?.user.description}}
+            </p>
+          </li>
+        </ul>
+      </div>

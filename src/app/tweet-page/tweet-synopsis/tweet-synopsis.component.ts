@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-tweet-synopsis',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TweetSynopsisComponent implements OnInit {
 
-  constructor() { }
+  tweetData
+  constructor(private httpService: HttpService) { }
 
   ngOnInit() {
+    console.log("hello")
+    this.httpService.syncTweet$
+    .subscribe(data=>{
+      this.tweetData = data;
+    })
+  }
+
+  ngDoCheck(){
+    console.log(this.tweetData)
   }
 
 }
